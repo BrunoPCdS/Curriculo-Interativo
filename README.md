@@ -101,6 +101,9 @@ No Vercel, configure `VITE_API_URL` nas variáveis de ambiente do projeto com:
 VITE_API_URL=https://curriculo-interativo-allr.onrender.com
 ```
 
+Informe somente a URL base da API, sem adicionar `/videos`, `/imagens` ou o
+link de deploy hook do Render.
+
 Depois de alterar essa variável, faça um novo deploy para que ela seja aplicada
 ao build do frontend.
 

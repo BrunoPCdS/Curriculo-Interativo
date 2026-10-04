@@ -15,7 +15,7 @@ type Project = {
     url: string;
 };
 
-const API_URL = import.meta.env.VITE_API_URL ?? "https://curriculo-interativo-allr.onrender.com";
+const API_URL = (import.meta.env.VITE_API_URL ?? "https://curriculo-interativo-allr.onrender.com").replace(/\/+$/, "");
 
 const technologies = [
     { name: "Python", group: "Linguagens" },
@@ -146,8 +146,8 @@ function App() {
                     videosResponse.json() as Promise<MediaItem[]>,
                     imagesResponse.json() as Promise<MediaItem[]>,
                 ]);
-                setVideos(loadedVideos);
-                setImages(loadedImages);
+                setVideos(loadedVideos.length > 0 ? loadedVideos : fallbackVideos);
+                setImages(loadedImages.length > 0 ? loadedImages : fallbackImages);
             } catch (error) {
                 console.error("Não foi possível carregar as mídias da API.", error);
             }
