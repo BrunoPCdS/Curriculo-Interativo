@@ -15,7 +15,7 @@ type Project = {
     url: string;
 };
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL ?? "https://curriculo-interativo-allr.onrender.com";
 
 const technologies = [
     { name: "Python", group: "Linguagens" },
@@ -138,10 +138,18 @@ function App() {
                     fetch(`${API_URL}/videos`),
                     fetch(`${API_URL}/imagens`),
                 ]);
-                if (videosResponse.ok) setVideos(await videosResponse.json());
-                if (imagesResponse.ok) setImages(await imagesResponse.json());
-            } catch {
-                // O conteúdo de exemplo mantém a experiência útil sem o back-end ligado.
+                if (!videosResponse.ok || !imagesResponse.ok) {
+                    throw new Error(`Falha ao carregar mídias: ${videosResponse.status}/${imagesResponse.status}`);
+                }
+
+                const [loadedVideos, loadedImages] = await Promise.all([
+                    videosResponse.json() as Promise<MediaItem[]>,
+                    imagesResponse.json() as Promise<MediaItem[]>,
+                ]);
+                setVideos(loadedVideos);
+                setImages(loadedImages);
+            } catch (error) {
+                console.error("Não foi possível carregar as mídias da API.", error);
             }
         };
         void loadMedia();

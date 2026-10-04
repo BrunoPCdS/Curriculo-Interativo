@@ -95,6 +95,15 @@ Crie `front/.env`:
 VITE_API_URL=http://localhost:3000
 ```
 
+No Vercel, configure `VITE_API_URL` nas variáveis de ambiente do projeto com:
+
+```env
+VITE_API_URL=https://curriculo-interativo-allr.onrender.com
+```
+
+Depois de alterar essa variável, faça um novo deploy para que ela seja aplicada
+ao build do frontend.
+
 Crie `back/.env` com a URL do PostgreSQL:
 
 ```env
