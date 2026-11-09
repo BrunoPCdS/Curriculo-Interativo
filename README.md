@@ -258,7 +258,8 @@ reduzida por media query.
 - [Gerenciamento de veículos](https://github.com/BrunoPCdS/Projeto-de-Gerenciamento-de-Ve-culos)
 - [Incidentes de Segurança](https://github.com/BrunoPCdS/Incidentes-de-Seguranca-da-Informac-o-no-Brasil-2010-a-2019-)
 - [Jogo Caça ao Pato em GRID](https://github.com/BrunoPCdS/Jogo-Ca-a-ao-Pato-em-GRID)
-- [Dexter App](https://github.com/lucasrochaexe/Projeto-de-Desenvolvimento-1)
+- [Dexter App](https://github.com/BrunoPCdS/Dexter)
+- [Snot Face](https://github.com/BrunoPCdS/SnotFace)
 
 ## Canais
 
